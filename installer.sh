@@ -6,7 +6,7 @@ R='\033[0;31m'
 G='\033[0;32m'
 N='\033[0m'
 
-TOTAL_STEPS=10
+TOTAL_STEPS=9
 STEP=0
 
 run_step() {
@@ -70,5 +70,5 @@ run_step "Installing iw" \
 run_step "Installing wps_hack" \
     "git clone https://github.com/xauusd25/wps_hack.git"
 
-run_step "Installing wps_hack" \
-    "python wps_hack/wtf.py --help"
+echo -e "\n${G}✔ Installation completed successfully${N}"
+echo -e "\nRun command: ${G} python wps_hack/wtf.py --help${N}\n"
