@@ -71,4 +71,4 @@ run_step "Installing wps_hack" \
     "git clone https://github.com/xauusd25/wps_hack.git"
 
 echo -e "\n${G}✔ Installation completed successfully${N}"
-echo -e "\nRun command: ${G} python wps_hack/wtf.py --help${N}\n"
+echo -e "\nRun command: ${G} sudo python wps_hack/wtf.py -i wlan0 -K${N}\n"
