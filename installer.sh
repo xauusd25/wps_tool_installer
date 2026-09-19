@@ -25,24 +25,6 @@ run_step() {
     fi
 }
 
-echo
-
-arch=$(dpkg --print-architecture)
-if [[ "$arch" != "aarch64" && "$arch" != "arm" ]]; then
-    echo "MiTool does not support architecture $arch"
-    exit 1
-fi
-
-if [ ! -d "$HOME/storage" ]; then
-    echo -e "\nGrant permission: termux-setup-storage\nThen rerun the command.\n"
-    exit 1
-fi
-
-if ! cmd package list packages --user 0 com.termux.api < /dev/null 2>/dev/null | grep -q 'com.termux.api'; then
-    echo -e "\ncom.termux.api app is not installed\nPlease install it first\n"
-    exit 1
-fi
-
 run_step "Updating system & fixing broken packages" \
     "yes | apt --fix-broken install && yes | apt update && yes | apt upgrade"
 
